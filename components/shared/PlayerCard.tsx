@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { InnerCard } from "./Card";
-import { ProgressBar } from "./ProgressBar";
-import type { Player } from "@/types";
+import { InnerCard } from './Card';
+import { ProgressBar } from './ProgressBar';
+import type { Player } from '@/types';
 
 interface PlayerCardProps {
   player: Player;
@@ -12,16 +12,9 @@ interface PlayerCardProps {
 export function PlayerCard({ player, positionColor }: PlayerCardProps) {
   return (
     <div className="group overflow-hidden rounded-[28px] bg-[#EDF2F7] shadow-[5px_5px_10px_rgba(0,0,0,0.06)] shadow-[-5px_-5px_10px_rgba(255,255,255,0.8)] transition-all hover:shadow-[8px_8px_16px_rgba(0,0,0,0.08)]">
-      <div
-        className={`relative h-24 overflow-hidden bg-gradient-to-br ${positionColor}`}
-      >
+      <div className={`relative h-24 overflow-hidden bg-gradient-to-br ${positionColor}`}>
         <div className="absolute right-0 top-0 opacity-20">
-          <svg
-            viewBox="0 0 100 100"
-            className="h-32 w-32"
-            fill="currentColor"
-            color="white"
-          >
+          <svg viewBox="0 0 100 100" className="h-32 w-32" fill="currentColor" color="white">
             <circle cx="50" cy="50" r="40" />
           </svg>
         </div>

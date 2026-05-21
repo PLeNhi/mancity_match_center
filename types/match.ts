@@ -6,7 +6,7 @@ export type Match = {
   awayScore?: number;
   date: string;
   competition: string;
-  status: "played" | "upcoming" | "live";
+  status: 'played' | 'upcoming' | 'live';
   homeIcon?: string;
   awayIcon?: string;
 };

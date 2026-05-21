@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { PlayerCard } from "./shared/PlayerCard";
-import { squadData } from "../data/squad";
-import type { Player } from "../types";
+import { PlayerCard } from './shared/PlayerCard';
+import { squadData } from '../data/squad';
+import type { Player } from '../types';
 
 const positionColors: Record<string, string> = {
-  "Thủ môn": "from-indigo-400 to-indigo-600",
-  "Hậu Vệ": "from-green-400 to-green-600",
-  "Tiền Vệ": "from-yellow-400 to-amber-600",
-  "Tiền Đạo": "from-red-400 to-red-600",
+  'Thủ môn': 'from-indigo-400 to-indigo-600',
+  'Hậu Vệ': 'from-green-400 to-green-600',
+  'Tiền Vệ': 'from-yellow-400 to-amber-600',
+  'Tiền Đạo': 'from-red-400 to-red-600',
 };
 
 export default function SquadPage() {
@@ -26,7 +26,11 @@ export default function SquadPage() {
               <h2 className="mb-4 text-xl font-semibold">{group.position}</h2>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {group.players.map((p: Player) => (
-                  <PlayerCard key={p.id} player={p} positionColor={positionColors[group.position] || "from-blue-400 to-blue-600"} />
+                  <PlayerCard
+                    key={p.id}
+                    player={p}
+                    positionColor={positionColors[group.position] || 'from-blue-400 to-blue-600'}
+                  />
                 ))}
               </div>
             </div>

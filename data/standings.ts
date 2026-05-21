@@ -1,8 +1,8 @@
-import type { Standing } from "@/types";
+import type { Standing } from '@/types';
 
 export const standingsData: Standing[] = [
   {
-    competition: "Premier League",
+    competition: 'Premier League',
     position: 1,
     points: 89,
     played: 38,
@@ -11,7 +11,7 @@ export const standingsData: Standing[] = [
     lost: 3,
   },
   {
-    competition: "Cúp Liên Đoàn Anh",
+    competition: 'Cúp Liên Đoàn Anh',
     position: 1,
     points: 15,
     played: 5,
@@ -20,7 +20,7 @@ export const standingsData: Standing[] = [
     lost: 0,
   },
   {
-    competition: "FA Cup",
+    competition: 'FA Cup',
     position: 2,
     points: 12,
     played: 4,

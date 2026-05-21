@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { InnerCard } from "./Card";
-import type { Match } from "@/types";
+import { InnerCard } from './Card';
+import type { Match } from '@/types';
 
 interface MatchCardProps {
   match: Match;
@@ -10,27 +10,27 @@ interface MatchCardProps {
 export function MatchCard({ match }: MatchCardProps) {
   const getStatusStyle = (status: string) => {
     switch (status) {
-      case "played":
-        return "bg-slate-100 text-slate-700";
-      case "live":
-        return "bg-red-100 text-red-700 animate-pulse";
-      case "upcoming":
-        return "bg-blue-100 text-blue-700";
+      case 'played':
+        return 'bg-slate-100 text-slate-700';
+      case 'live':
+        return 'bg-red-100 text-red-700 animate-pulse';
+      case 'upcoming':
+        return 'bg-blue-100 text-blue-700';
       default:
-        return "";
+        return '';
     }
   };
 
   const getStatusLabel = (status: string) => {
     switch (status) {
-      case "played":
-        return "Đã diễn ra";
-      case "live":
-        return "Đang diễn ra";
-      case "upcoming":
-        return "Sắp tới";
+      case 'played':
+        return 'Đã diễn ra';
+      case 'live':
+        return 'Đang diễn ra';
+      case 'upcoming':
+        return 'Sắp tới';
       default:
-        return "";
+        return '';
     }
   };
 
@@ -43,7 +43,7 @@ export function MatchCard({ match }: MatchCardProps) {
             <span className="font-semibold text-[#1C2C5B]">{match.homeTeam}</span>
           </div>
           <div className="text-center">
-            {match.status === "played" ? (
+            {match.status === 'played' ? (
               <div className="text-2xl font-bold text-[#6CABDD]">
                 {match.homeScore} - {match.awayScore}
               </div>
@@ -66,7 +66,7 @@ export function MatchCard({ match }: MatchCardProps) {
         </div>
         <span
           className={`inline-block rounded-full px-4 py-2 text-xs font-semibold ${getStatusStyle(
-            match.status
+            match.status,
           )}`}
         >
           {getStatusLabel(match.status)}

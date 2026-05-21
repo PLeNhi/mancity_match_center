@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 interface ProgressBarProps {
   value: number;
@@ -7,12 +7,7 @@ interface ProgressBarProps {
   label?: string;
 }
 
-export function ProgressBar({
-  value,
-  max = 100,
-  color = "bg-[#6CABDD]",
-  label,
-}: ProgressBarProps) {
+export function ProgressBar({ value, max = 100, color = 'bg-[#6CABDD]', label }: ProgressBarProps) {
   const percentage = (value / max) * 100;
 
   return (

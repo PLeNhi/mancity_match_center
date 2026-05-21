@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { TrophyCard } from "./shared/TrophyCard";
-import { getAchievementsStats, achievementsData } from "../data/achievements";
+import { TrophyCard } from './shared/TrophyCard';
+import { getAchievementsStats, achievementsData } from '../data/achievements';
 
 export default function AchievementsPage() {
   const stats = getAchievementsStats();
@@ -33,7 +33,9 @@ export default function AchievementsPage() {
                 <div className="text-xs text-slate-500">Domestic</div>
               </div>
               <div className="rounded-[16px] bg-white p-4 text-center">
-                <div className="text-2xl font-bold text-[#1C2C5B]">{stats.internationalTrophies}</div>
+                <div className="text-2xl font-bold text-[#1C2C5B]">
+                  {stats.internationalTrophies}
+                </div>
                 <div className="text-xs text-slate-500">International</div>
               </div>
               <div className="rounded-[16px] bg-white p-4 text-center">

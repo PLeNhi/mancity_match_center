@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { navigationItems } from "../data/navigation";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { navigationItems } from '../data/navigation';
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -26,8 +26,8 @@ export default function Navigation() {
                 href={item.href}
                 className={`flex items-center gap-2 rounded-[28px] px-4 py-3 text-sm font-semibold transition-all ${
                   isActive
-                    ? "bg-[#6CABDD] text-white shadow-[5px_5px_12px_rgba(0,0,0,0.12)]"
-                    : "bg-[#F4F8FF] text-[#1C2C5B] shadow-[-5px_-5px_10px_rgba(255,255,255,0.9)] hover:bg-white"
+                    ? 'bg-[#6CABDD] text-white shadow-[5px_5px_12px_rgba(0,0,0,0.12)]'
+                    : 'bg-[#F4F8FF] text-[#1C2C5B] shadow-[-5px_-5px_10px_rgba(255,255,255,0.9)] hover:bg-white'
                 }`}
               >
                 <span className="text-lg">{item.icon}</span>

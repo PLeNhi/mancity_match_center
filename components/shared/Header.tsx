@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 interface SectionHeaderProps {
   title: string;
@@ -10,7 +10,11 @@ export function SectionHeader({ title, subtitle, icon }: SectionHeaderProps) {
   return (
     <div className="flex items-center justify-between">
       <div>
-        {icon && <p className="text-sm uppercase tracking-[0.35em] text-slate-500 flex items-center gap-2">{icon}</p>}
+        {icon && (
+          <p className="text-sm uppercase tracking-[0.35em] text-slate-500 flex items-center gap-2">
+            {icon}
+          </p>
+        )}
         <h2 className="mt-2 text-2xl font-semibold">{title}</h2>
       </div>
       {subtitle && <p className="text-sm text-slate-600">{subtitle}</p>}

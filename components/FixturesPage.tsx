@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { MatchCard } from "./shared/MatchCard";
-import { matchesData } from "../data/matches";
+import { MatchCard } from './shared/MatchCard';
+import { matchesData } from '../data/matches';
 
 export default function FixturesPage() {
   return (
