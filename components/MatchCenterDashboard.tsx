@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { formatVietnamDateTime } from '@/utils/date';
 
 type MatchInfo = {
   opponent: string;
@@ -152,7 +153,7 @@ export default function MatchCenterDashboard() {
                   </span>
                 </div>
                 <div className="mt-5 space-y-3 text-sm text-slate-600">
-                  <p>{matchCenter.lastMatch.date}</p>
+                  <p>{formatVietnamDateTime(matchCenter.lastMatch.date)}</p>
                   <p>{matchCenter.lastMatch.venue}</p>
                   <p className="text-[#1C2C5B]">{matchCenter.lastMatch.highlight}</p>
                 </div>
@@ -176,7 +177,7 @@ export default function MatchCenterDashboard() {
                   </div>
                 </div>
                 <div className="mt-5 space-y-3 text-sm text-slate-600">
-                  <p>{matchCenter.upcomingMatch.date}</p>
+                  <p>{formatVietnamDateTime(matchCenter.upcomingMatch.date)}</p>
                   <p>{matchCenter.upcomingMatch.venue}</p>
                   <p className="text-[#1C2C5B]">{matchCenter.upcomingMatch.highlight}</p>
                 </div>

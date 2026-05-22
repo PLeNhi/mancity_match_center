@@ -1,7 +1,9 @@
 'use client';
 
+import Image from 'next/image';
 import { InnerCard } from './Card';
 import type { Match } from '@/types';
+import { formatVietnamDateTime } from '@/utils/date';
 
 interface MatchCardProps {
   match: Match;
@@ -39,7 +41,13 @@ export function MatchCard({ match }: MatchCardProps) {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-3 flex-1">
           <div className="flex items-center gap-2 flex-1">
-            <span className="text-3xl">{match.homeIcon}</span>
+            <Image
+              className="text-2xl"
+              src={match.homeLogo}
+              alt={match.homeTeam}
+              width={26}
+              height={26}
+            />
             <span className="font-semibold text-[#1C2C5B]">{match.homeTeam}</span>
           </div>
           <div className="text-center">
@@ -53,7 +61,13 @@ export function MatchCard({ match }: MatchCardProps) {
           </div>
           <div className="flex items-center gap-2 flex-1 justify-end">
             <span className="font-semibold text-[#1C2C5B]">{match.awayTeam}</span>
-            <span className="text-3xl">{match.awayIcon}</span>
+            <Image
+              className="text-2xl"
+              src={match.awayLogo}
+              alt={match.awayTeam}
+              width={26}
+              height={26}
+            />
           </div>
         </div>
       </div>
@@ -61,7 +75,7 @@ export function MatchCard({ match }: MatchCardProps) {
       <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="text-sm text-slate-600">
           <p className="font-medium">
-            {match.date} • {match.competition}
+            {formatVietnamDateTime(match.date)} • {match.competition}
           </p>
         </div>
         <span
