@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { InnerCard } from './Card';
+import { InnerCard } from './card';
 import type { Match } from '@/types';
 import { formatVietnamDateTime } from '@/utils/date';
 

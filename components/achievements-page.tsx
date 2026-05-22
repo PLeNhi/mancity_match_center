@@ -4,8 +4,6 @@ import { TrophyCard } from './shared/trophy-card';
 import { getAchievementsStats, achievementsData } from '../data/achievements';
 
 export default function AchievementsPage() {
-  // const stats = getAchievementsStats();
-
   return (
     <div className="min-h-screen bg-[#E8F0FE] px-4 py-8 text-[#1C2C5B] sm:px-6 lg:px-10">
       <div className="mx-auto max-w-7xl">

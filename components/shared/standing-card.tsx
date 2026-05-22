@@ -1,6 +1,6 @@
 'use client';
 
-import { InnerCard } from './Card';
+import { InnerCard } from './card';
 import type { Standing } from '@/types';
 
 interface StandingCardProps {

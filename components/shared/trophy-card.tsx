@@ -1,6 +1,6 @@
 'use client';
 
-import { InnerCard } from './Card';
+import { InnerCard } from './card';
 import type { Achievement } from '@/types';
 
 interface TrophyCardProps {

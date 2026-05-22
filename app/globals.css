@@ -12,7 +12,7 @@
     BlinkMacSystemFont,
     'Segoe UI',
     sans-serif;
-  background-color: #e8f0fe;
+  background-color: #fafaf8;
 }
 
 html,
@@ -22,10 +22,29 @@ body {
 
 body {
   margin: 0;
-  background: #e8f0fe;
-  color: #1c2c5b;
+  background: #fafaf8;
+  color: #2b2b23;
 }
 
 * {
   box-sizing: border-box;
+}
+
+/* Hand-drawn sketchy styles */
+@layer components {
+  .sketchy-border {
+    @apply border-2 border-sketch-900;
+  }
+
+  .sketchy-card {
+    @apply bg-white border-hand border-sketch-900 shadow-sketch;
+  }
+
+  .sketchy-input {
+    @apply bg-sketch-50 border-hand border-sketch-900 shadow-sketch;
+  }
+
+  .sketchy-button {
+    @apply bg-white border-hand border-sketch-900 shadow-sketch hover:shadow-sketch-md transition-shadow;
+  }
 }
