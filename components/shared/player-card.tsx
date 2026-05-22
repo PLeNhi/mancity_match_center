@@ -1,7 +1,6 @@
 'use client';
 
 import { InnerCard } from './card';
-import { ProgressBar } from './progress-bar';
 import type { Player } from '@/types';
 
 interface PlayerCardProps {
