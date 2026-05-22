@@ -15,6 +15,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Manchester City Match Center',
   description: 'Luxury Manchester City match center dashboard built with Next.js and Tailwind CSS.',
+  icons: [{ rel: 'icon', url: '/favicon.svg' }],
 };
 
 export default async function RootLayout({

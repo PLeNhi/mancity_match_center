@@ -9,6 +9,7 @@ export function useSquadFilter(squad: Squad[] | undefined) {
   const selectedPosition = useSquadFilterStore((state) => state.selectedPosition);
   const setSearchTerm = useSquadFilterStore((state) => state.setSearchTerm);
   const setSelectedPosition = useSquadFilterStore((state) => state.setSelectedPosition);
+  const resetFilters = useSquadFilterStore((state) => state.resetFilters);
 
   const positionOptions = useMemo(() => {
     if (!squad) return [defaultFilter];
@@ -45,5 +46,6 @@ export function useSquadFilter(squad: Squad[] | undefined) {
     selectedPosition,
     setSearchTerm,
     setSelectedPosition,
+    resetFilters,
   };
 }

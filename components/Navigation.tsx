@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { navigationItems } from '../data/navigation';
 import Image from 'next/image';
-import mcfcLogo from '@/assets/logo/mcfc_logo.jpeg';
+import mcfcLogo from '@/assets/logo/mcfc_logo.png';
 
 export default function Navigation() {
   const pathname = usePathname();
