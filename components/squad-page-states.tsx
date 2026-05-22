@@ -86,7 +86,9 @@ export function SquadErrorState({ dehydratedState, onRetry }: SquadErrorStatePro
 
         <div className="border-hand border-sketch-900 bg-sketch-100 p-8 text-center text-sketch-900 shadow-sketch">
           <p className="text-lg font-semibold">Không thể tải danh sách đội hình</p>
-          <p className="mt-2 text-sm text-sketch-700">Vui lòng thử lại hoặc kiểm tra kết nối mạng.</p>
+          <p className="mt-2 text-sm text-sketch-700">
+            Vui lòng thử lại hoặc kiểm tra kết nối mạng.
+          </p>
           <button
             type="button"
             onClick={onRetry}
