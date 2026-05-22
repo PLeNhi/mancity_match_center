@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
 import usePlayersQuery from '@/hooks/usePlayersQuery';
 import { DehydratedState, HydrationBoundary } from '@tanstack/react-query';
 import { PlayerCard } from './shared/player-card';
+import { SquadFilter } from './squad-filter';
+import { useSquadFilter } from '@/hooks/useSquadFilter';
 import type { Squad } from '@/types';
 
 interface SquadPageClientProps {
@@ -32,6 +33,15 @@ export default function SquadPageClient({
     isError,
   } = usePlayersQuery(initialTeam, initialSeason, initialPlayers ?? []);
 
+  const {
+    filteredSquad,
+    positionOptions,
+    searchTerm,
+    selectedPosition,
+    setSearchTerm,
+    setSelectedPosition,
+  } = useSquadFilter(squad);
+
   if (isLoading) {
     return <div className="text-center text-slate-500">Loading squad...</div>;
   }
@@ -49,21 +59,37 @@ export default function SquadPageClient({
             <h1 className="mt-2 text-3xl font-semibold">First Team & Squad</h1>
           </header>
 
+          <SquadFilter
+            searchTerm={searchTerm}
+            selectedPosition={selectedPosition}
+            positionOptions={positionOptions}
+            onSearchTermChange={setSearchTerm}
+            onSelectedPositionChange={setSelectedPosition}
+          />
+
           <section className="space-y-8">
-            {squad.map((group) => (
-              <div key={group.position}>
-                <h2 className="mb-4 text-xl font-semibold">{group.position}</h2>
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                  {group.players.map((player) => (
-                    <PlayerCard
-                      key={player.id}
-                      player={player}
-                      positionColor={positionColors[group.position] || 'from-blue-400 to-blue-600'}
-                    />
-                  ))}
+            {filteredSquad.length > 0 ? (
+              filteredSquad.map((group) => (
+                <div key={group.position}>
+                  <h2 className="mb-4 text-xl font-semibold">{group.position}</h2>
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                    {group.players.map((player) => (
+                      <PlayerCard
+                        key={player.id}
+                        player={player}
+                        positionColor={
+                          positionColors[group.position] || 'from-blue-400 to-blue-600'
+                        }
+                      />
+                    ))}
+                  </div>
                 </div>
+              ))
+            ) : (
+              <div className="rounded-3xl border border-slate-200 bg-white p-8 text-center text-slate-600 shadow-sm">
+                Không tìm thấy cầu thủ phù hợp. Thử thay đổi từ khóa tìm kiếm hoặc vị trí.
               </div>
-            ))}
+            )}
           </section>
         </div>
       </div>
