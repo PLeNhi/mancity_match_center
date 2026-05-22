@@ -3,18 +3,22 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { navigationItems } from '../data/navigation';
+import Image from 'next/image';
+import mcfcLogo from '@/assets/logo/mcfc_logo.jpeg';
 
 export default function Navigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-0 z-50 rounded-b-[32px] bg-[#EDF2F7] shadow-[5px_5px_10px_rgba(0,0,0,0.06)]">
+    <nav className="sticky top-0 z-50 bg-[#EDF2F7] shadow-[5px_5px_10px_rgba(0,0,0,0.06)]">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-10">
         <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#F4F8FF] shadow-[5px_5px_10px_rgba(0,0,0,0.06)]">
-            <span className="text-lg font-bold text-[#6CABDD]">MC</span>
+          <div className="flex h-12 w-12 items-center justify-center rounded-full shadow-[5px_5px_10px_rgba(0,0,0,0.06)]">
+            <Image src={mcfcLogo} alt="Manchester City FC Logo" width={52} height={52} />
           </div>
-          <h1 className="hidden text-2xl font-semibold tracking-tight sm:inline">MCFC</h1>
+          <h1 className="hidden text-2xl font-semibold tracking-tight sm:inline">
+            Manchester City
+          </h1>
         </Link>
 
         <div className="flex gap-3">

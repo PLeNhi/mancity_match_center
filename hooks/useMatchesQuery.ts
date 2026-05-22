@@ -15,7 +15,9 @@ export function useMatchesQuery(
       return fetchMatches(league, season, team);
     },
     initialData: initialMatches,
-    staleTime: 5 * 60 * 1000,
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+    staleTime: 60 * 60 * 1000,
   });
 }
 

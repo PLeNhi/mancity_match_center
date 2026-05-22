@@ -1,10 +1,10 @@
 'use client';
 
-import { TrophyCard } from './shared/TrophyCard';
+import { TrophyCard } from './shared/trophy-card';
 import { getAchievementsStats, achievementsData } from '../data/achievements';
 
 export default function AchievementsPage() {
-  const stats = getAchievementsStats();
+  // const stats = getAchievementsStats();
 
   return (
     <div className="min-h-screen bg-[#E8F0FE] px-4 py-8 text-[#1C2C5B] sm:px-6 lg:px-10">
@@ -20,7 +20,7 @@ export default function AchievementsPage() {
           ))}
         </section>
 
-        <section>
+        {/* <section>
           <div className="rounded-[32px] bg-[#EDF2F7] p-6 shadow-[5px_5px_10px_rgba(0,0,0,0.06)]">
             <h2 className="text-xl font-semibold">Quick Stats</h2>
             <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
@@ -44,7 +44,7 @@ export default function AchievementsPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     </div>
   );

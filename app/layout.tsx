@@ -4,7 +4,7 @@ import './globals.css';
 import { getLocale } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import QueryProvider from './QueryProvider';
-import Navigation from '../components/Navigation';
+import Navigation from '../components/navigation';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -29,7 +29,7 @@ export default async function RootLayout({
         <NextIntlClientProvider>
           <QueryProvider>
             <Navigation />
-            {children}
+            <div className="px-4 py-8">{children}</div>
           </QueryProvider>
         </NextIntlClientProvider>
       </body>

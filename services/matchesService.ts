@@ -1,6 +1,8 @@
 import { matchesData } from '@/data/matches';
-import type { Match } from '@/types';
+import { squadData } from '@/data/squad';
+import type { Match, Squad } from '@/types';
 import { footballService } from './footballService';
+import { mapApiFootballPlayersToSquad } from './transform/footballTransform';
 
 export async function fetchMatches(
   league?: number,
@@ -14,4 +16,21 @@ export async function fetchMatches(
 
   const fixtures = await footballService.getFixtures({ league, season, team });
   return fixtures.length ? fixtures : matchesData;
+}
+
+export async function fetchPlayers(team?: number, season?: number): Promise<Squad[]> {
+  if (!process.env.NEXT_PUBLIC_API_FOOTBALL_KEY || !team) {
+    await new Promise((resolve) => setTimeout(resolve, 150));
+    return squadData;
+  }
+
+  try {
+    const playersData = await footballService.getPlayers(team, season);
+    console.log('🚀 ~ fetchPlayers ~ playersData:', playersData);
+    return playersData.length ? mapApiFootballPlayersToSquad(playersData) : squadData;
+  } catch (error) {
+    console.error('fetchPlayers error', error);
+  }
+
+  return squadData;
 }

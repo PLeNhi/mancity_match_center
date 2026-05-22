@@ -9,17 +9,20 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 dayjs.locale('vi');
 
-const DATE_FORMATS = [
-  'YYYY-MM-DDTHH:mm:ssZ',
-  'YYYY-MM-DDTHH:mm:ss',
-  'YYYY-MM-DD',
-  'DD/MM/YYYY',
-  'DD/MM/YYYY HH:mm',
-  'ddd, MMM D • HH:mm [GMT]',
-];
+export function formatVietnamDateTime(value: string | Date, format = 'DD/MM/YYYY - HH:mm') {
+  if (!value) return '';
 
-export function formatVietnamDateTime(value: string | Date, format = 'DD/MM/YYYY HH:mm') {
-  const date = typeof value === 'string' ? dayjs(value, DATE_FORMATS, true) : dayjs(value);
+  let date;
+
+  if (typeof value === 'string') {
+    date = dayjs(value, format, true);
+
+    if (!date.isValid()) {
+      date = dayjs(value);
+    }
+  } else {
+    date = dayjs(value);
+  }
 
   if (!date.isValid()) {
     return String(value);
