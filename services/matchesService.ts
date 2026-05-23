@@ -26,7 +26,7 @@ export async function fetchPlayers(team?: number, season?: number): Promise<Squa
 
   try {
     const playersData = await footballService.getPlayers(team, season);
-    return playersData.length ? mapApiFootballPlayersToSquad(playersData) : squadData;
+    return playersData.length ? playersData : squadData;
   } catch (error) {
     console.error('fetchPlayers error', error);
   }

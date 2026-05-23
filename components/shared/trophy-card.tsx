@@ -10,9 +10,6 @@ interface TrophyCardProps {
 export function TrophyCard({ achievement }: TrophyCardProps) {
   return (
     <div className="rounded-[32px] bg-[#EDF2F7] p-6 shadow-[5px_5px_10px_rgba(0,0,0,0.06)]">
-      <div
-        className={`mb-6 h-16 w-16 rounded-2xl bg-gradient-to-br ${achievement.color} shadow-lg`}
-      />
       <h2 className="text-2xl font-semibold">{achievement.title}</h2>
       <p className="mt-2 text-sm text-slate-500">{achievement.trophies.length} danh hiệu</p>
 

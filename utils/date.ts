@@ -9,7 +9,7 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 dayjs.locale('vi');
 
-export function formatVietnamDateTime(value: string | Date, format = 'DD/MM/YYYY - HH:mm') {
+export function formatVietnamDateTime(value: string | Date, format = 'DD/MM/YYYY') {
   if (!value) return '';
 
   let date;

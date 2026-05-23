@@ -2,6 +2,7 @@
 
 import { type ReactNode } from 'react';
 import { DehydratedState, HydrationBoundary } from '@tanstack/react-query';
+import { SketchyButton } from './sketchy-button';
 
 interface SquadPageFrameProps {
   dehydratedState?: DehydratedState;
@@ -89,13 +90,9 @@ export function SquadErrorState({ dehydratedState, onRetry }: SquadErrorStatePro
           <p className="mt-2 text-sm text-sketch-700">
             Vui lòng thử lại hoặc kiểm tra kết nối mạng.
           </p>
-          <button
-            type="button"
-            onClick={onRetry}
-            className="mt-6 inline-flex bg-sketch-900 text-white px-6 py-2 text-sm font-semibold transition hover:bg-sketch-800"
-          >
+          <SketchyButton onClick={onRetry} className="mt-6">
             Thử lại
-          </button>
+          </SketchyButton>
         </div>
       </div>
     </SquadPageFrame>
@@ -108,18 +105,14 @@ interface SquadEmptyStateProps {
 
 export function SquadEmptyState({ onReset }: SquadEmptyStateProps) {
   return (
-    <div className="border-hand border-sketch-900 bg-white p-8 text-center text-sketch-700 shadow-sketch">
+    <div className="border-hand  bg-white p-8 text-center text-sketch-700 shadow-sketch">
       <p className="text-lg font-semibold text-sketch-900">Không tìm thấy cầu thủ phù hợp</p>
       <p className="mt-2 text-sm text-sketch-700">
         Hãy thử điều chỉnh bộ lọc hoặc đặt lại tìm kiếm để xem nhiều hơn.
       </p>
-      <button
-        type="button"
-        onClick={onReset}
-        className="mt-6 inline-flex bg-sketch-900 text-white px-6 py-2 text-sm font-semibold transition hover:bg-sketch-800"
-      >
+      <SketchyButton onClick={onReset} className="mt-6">
         Đặt lại bộ lọc
-      </button>
+      </SketchyButton>
     </div>
   );
 }

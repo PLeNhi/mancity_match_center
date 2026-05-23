@@ -31,24 +31,6 @@ export function SketchyButton({ children, onClick, className = '' }: SketchyButt
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0, transition: { duration: 0.45, ease: 'easeOut' } }}
     >
-      <motion.svg
-        viewBox="0 0 184 56"
-        className="pointer-events-none absolute inset-0 h-full w-full"
-        preserveAspectRatio="none"
-      >
-        <motion.path
-          d="M 8 4 H 176 C 180 4 180 52 176 52 H 8 C 4 52 4 4 8 4 Z"
-          fill="transparent"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeDasharray="0 1"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 1, transition: { duration: 0.9, ease: 'easeInOut' } }}
-        />
-      </motion.svg>
-
       <span className="relative z-10">{children}</span>
     </motion.button>
   );

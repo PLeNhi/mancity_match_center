@@ -15,6 +15,7 @@ interface SquadGridProps {
 }
 
 export function SquadGrid({ squads }: SquadGridProps) {
+  console.log('🚀 ~ SquadGrid ~ squads:', squads);
   return (
     <>
       {squads.map((group) => (

@@ -10,8 +10,8 @@ export const matchesData: Match[] = [
     date: '28/05/2026',
     competition: 'Premier League',
     status: 'played',
-    homeLogo: '🔵',
-    awayLogo: '⚪',
+    homeLogo: 'https://media.api-sports.io/football/players/568413.png',
+    awayLogo: 'https://media.api-sports.io/football/players/568413.png',
   },
   {
     id: '2',
@@ -20,8 +20,8 @@ export const matchesData: Match[] = [
     date: '31/05/2026',
     competition: 'Premier League',
     status: 'upcoming',
-    homeLogo: '🔵',
-    awayLogo: '🔵',
+    homeLogo: 'https://media.api-sports.io/football/players/568413.png',
+    awayLogo: 'https://media.api-sports.io/football/players/568413.png',
   },
   {
     id: '3',
@@ -30,8 +30,8 @@ export const matchesData: Match[] = [
     date: '07/06/2026',
     competition: 'Premier League',
     status: 'upcoming',
-    homeLogo: '🔵',
-    awayLogo: '🔴',
+    homeLogo: 'https://media.api-sports.io/football/players/568413.png',
+    awayLogo: 'https://media.api-sports.io/football/players/568413.png',
   },
   {
     id: '4',
@@ -40,8 +40,8 @@ export const matchesData: Match[] = [
     date: '14/06/2026',
     competition: 'Premier League',
     status: 'upcoming',
-    homeLogo: '⚫',
-    awayLogo: '🔵',
+    homeLogo: 'https://media.api-sports.io/football/players/568413.png',
+    awayLogo: 'https://media.api-sports.io/football/players/568413.png',
   },
   {
     id: '5',
@@ -50,7 +50,7 @@ export const matchesData: Match[] = [
     date: '21/06/2026',
     competition: 'Premier League',
     status: 'upcoming',
-    homeLogo: '🔵',
-    awayLogo: '⚪',
+    homeLogo: 'https://media.api-sports.io/football/players/568413.png',
+    awayLogo: 'https://media.api-sports.io/football/players/568413.png',
   },
 ];

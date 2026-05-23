@@ -1,13 +1,14 @@
 'use client';
 
 import { defaultFilter } from '@/store/useSquadFilterStore';
+import { SketchyButton } from './sketchy-button';
 
 interface SquadFilterProps {
   searchTerm: string;
   selectedPosition: string;
   positionOptions: string[];
-  onSearchTermChange: (value: string) => void;
-  onSelectedPositionChange: (value: string) => void;
+  onSearchTermChange?: (value: string) => void;
+  onSelectedPositionChange?: (value: string) => void;
   onReset?: () => void;
 }
 
@@ -32,9 +33,9 @@ export function SquadFilter({
             id="player-search"
             type="search"
             value={searchTerm}
-            onChange={(event) => onSearchTermChange(event.target.value)}
+            onChange={(event) => onSearchTermChange?.(event.target.value)}
             placeholder="Tìm theo tên hoặc vị trí"
-            className="w-full bg-transparent text-sm text-sketch-900 outline-none placeholder:text-sketch-600"
+            className="w-full bg-transparent text-sm text-sketch-900 rounded-md outline-none placeholder:text-sketch-600"
           />
         </div>
 
@@ -45,7 +46,7 @@ export function SquadFilter({
           <select
             id="position-filter"
             value={selectedPosition}
-            onChange={(event) => onSelectedPositionChange(event.target.value)}
+            onChange={(event) => onSelectedPositionChange?.(event.target.value)}
             className="bg-sketch-50 border-hand border-sketch-900 px-4 py-2 text-sm text-sketch-900 outline-none transition shadow-sketch"
           >
             {positionOptions.map((position) => (
@@ -58,13 +59,9 @@ export function SquadFilter({
       </div>
       {hasActiveFilters && onReset ? (
         <div className="flex justify-end">
-          <button
-            type="button"
-            onClick={onReset}
-            className="bg-white border-hand border-sketch-900 px-4 py-2 text-sm font-medium text-sketch-900 transition shadow-sketch hover:shadow-sketch-md"
-          >
+          <SketchyButton onClick={onReset} className="px-4 py-2 text-sm">
             Đặt lại
-          </button>
+          </SketchyButton>
         </div>
       ) : null}
     </div>

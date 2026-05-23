@@ -1,7 +1,11 @@
 import { privateAxios } from '@/lib/api';
 import { API_ENDPOINTS } from '@/constants/api';
-import { mapApiFootballFixturesToMatches } from './transform/footballTransform';
-import type { Match } from '@/types';
+import {
+  mapApiFootballFixturesToMatches,
+  mapApiFootballPlayersToSquad,
+} from './transform/footballTransform';
+import type { Match, Squad } from '@/types';
+import { ApiFootballSquadsResponse, PlayerResponse } from './transform/types/players-responseve';
 
 interface FixtureParams {
   league?: number;
@@ -45,13 +49,13 @@ export const footballService = {
     return response.data?.response ?? [];
   },
 
-  getPlayers: async (team: number, season?: number): Promise<any> => {
+  getPlayers: async (team: number, season?: number): Promise<Squad[]> => {
     const response = await privateAxios.get(API_ENDPOINTS.FOOTBALL.PLAYERS, {
       params: {
         team,
-        season,
       },
     });
-    return response.data?.response ?? [];
+    const players = response.data?.response[0]?.players ?? [];
+    return mapApiFootballPlayersToSquad(players);
   },
 };

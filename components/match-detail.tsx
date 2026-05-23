@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import type { Match } from '@/types';
 import { formatVietnamDateTime } from '@/utils/date';
+import { SketchyTabButton } from './sketchy-tab';
 
 interface MatchDetailProps {
   match: Match;
@@ -177,20 +178,11 @@ export default function MatchDetail({ match }: MatchDetailProps) {
         </div>
       </div>
 
-      <div className="mb-5 flex gap-2 rounded-full bg-slate-100 p-1">
+      <div className="mb-5 flex flex-wrap gap-2 rounded-full bg-slate-100 p-1">
         {TAB_KEYS.map((tab) => (
-          <button
-            key={tab}
-            type="button"
-            onClick={() => setActiveTab(tab)}
-            className={`rounded-full px-5 py-2 text-sm font-semibold transition ${
-              activeTab === tab
-                ? 'bg-[#1C2C5B] text-white shadow-lg shadow-slate-300/20'
-                : 'text-slate-600 hover:bg-white'
-            }`}
-          >
+          <SketchyTabButton key={tab} active={activeTab === tab} onClick={() => setActiveTab(tab)}>
             {tab === 'lineups' ? 'Đội hình' : 'Thống kê'}
-          </button>
+          </SketchyTabButton>
         ))}
       </div>
 

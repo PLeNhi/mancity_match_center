@@ -18,6 +18,7 @@ export function useMatchesQuery(
     refetchOnMount: false,
     refetchOnWindowFocus: false,
     staleTime: 60 * 60 * 1000,
+    refetchOnReconnect: false,
   });
 }
 

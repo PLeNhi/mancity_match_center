@@ -3,11 +3,8 @@ export type Player = {
   number: number;
   name: string;
   position: string;
-  nationality: string;
   age: number;
-  goals?: number;
-  assists?: number;
-  appearances?: number;
+  photo?: any;
 };
 
 export type Squad = {

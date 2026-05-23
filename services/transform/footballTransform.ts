@@ -1,4 +1,5 @@
 import type { Match, Squad, Player } from '@/types';
+import { ApiFootballSquadsResponse, PlayerResponse } from './types/players-responseve';
 
 export function mapApiFootballFixturesToMatches(fixtures: any[]): Match[] {
   return fixtures.map((fixture) => {
@@ -26,7 +27,7 @@ export function mapApiFootballFixturesToMatches(fixtures: any[]): Match[] {
   });
 }
 
-export function mapApiFootballPlayersToSquad(playersData: any[]): Squad[] {
+export function mapApiFootballPlayersToSquad(playersData: PlayerResponse[]): Squad[] {
   // Group players by position
   const groupedByPosition = new Map<string, Player[]>();
 
@@ -45,24 +46,19 @@ export function mapApiFootballPlayersToSquad(playersData: any[]): Squad[] {
     position,
     players: players.sort((a, b) => a.number - b.number),
   }));
-
   return squad;
 }
 
-function mapApiPlayerToPlayer(playerData: any): Player {
-  const player = playerData.player ?? playerData;
-  const statistics = playerData.statistics?.[0] ?? {};
+function mapApiPlayerToPlayer(playerData: PlayerResponse): Player {
+  const player = playerData;
 
   return {
     id: String(player.id ?? Math.random()),
-    number: Number(statistics.number ?? player.number ?? 0),
+    number: Number(player.number ?? 0),
     name: player.name ?? 'Unknown',
-    position: mapPosition(statistics.position ?? player.position ?? 'Unknown'),
-    nationality: player.nationality ?? 'Unknown',
+    position: mapPosition(player.position ?? 'Unknown'),
     age: Number(player.age ?? 0),
-    goals: Number(statistics.goals?.total ?? statistics.goals ?? 0) || undefined,
-    assists: Number(statistics.assists ?? 0) || undefined,
-    appearances: Number(statistics.games?.appearences ?? statistics.games ?? 0) || undefined,
+    photo: player.photo ? player.photo : undefined,
   };
 }
 

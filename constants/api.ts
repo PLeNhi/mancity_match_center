@@ -3,7 +3,7 @@ export const API_ENDPOINTS = {
     FIXTURES: '/fixtures',
     STANDINGS: '/standings',
     TEAMS: '/teams',
-    PLAYERS: '/players',
+    PLAYERS: '/players/squads',
     LEAGUES: '/leagues',
   },
 };

@@ -10,7 +10,10 @@ export function usePlayersQuery(team?: number, season?: number, initialPlayers: 
       return fetchPlayers(team, season);
     },
     initialData: initialPlayers,
-    staleTime: 5 * 60 * 1000,
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+    staleTime: 60 * 60 * 1000,
+    refetchOnReconnect: false,
   });
 }
 
