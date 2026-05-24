@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/PLeNhi/mancity_match_center/main/assets/logo/logo.png" alt="Manchester City Match Center" width="160" />
+  <img src="https://raw.githubusercontent.com/PLeNhi/mancity_match_center/main/assets/logo/mcfc_logo.png" alt="Manchester City Match Center" width="160" />
 
   <h1>Manchester City Match Center</h1>
   
@@ -82,3 +82,65 @@ mancity_match_center/
 ├── constants/              # App constants
 └── public/                 # Static assets
 ```
+
+---
+
+## Installation & Setup
+
+**1. Clone the Repository**
+
+```bash
+git clone https://github.com/PLeNhi/mancity_match_center.git
+cd mancity_match_center
+```
+
+**2. Install Dependencies**
+
+```bash
+# Using pnpm (recommended)
+pnpm install
+
+# Or using npm
+npm install
+```
+
+**3. Environment Variables**
+Copy the example environment file:
+
+```bash
+cp .env.local.example .env.local
+```
+
+Then add your API key:
+
+```bash
+NEXT_PUBLIC_API_FOOTBALL_KEY=your_api_key_here
+```
+
+**4. Run the Application**
+
+```bash
+# Development
+pnpm dev
+
+# Build for production
+pnpm build
+
+# Start production server
+pnpm start
+```
+
+**4. Live Demo**
+
+https://mancity-match-center.vercel.app
+
+## Author
+
+**Nhi Le**
+
+---
+
+<div align="center">
+  <p>Made with ❤️ for Manchester City fans</p>
+  <strong>⭐ If you like this project, please give it a star on GitHub!</strong>
+</div>
