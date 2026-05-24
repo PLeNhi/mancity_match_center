@@ -105,6 +105,7 @@ npm install
 ```
 
 **3. Environment Variables**
+
 Copy the example environment file:
 
 ```bash
