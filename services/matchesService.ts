@@ -2,7 +2,6 @@ import { matchesData } from '@/data/matches';
 import { squadData } from '@/data/squad';
 import type { Match, Squad } from '@/types';
 import { footballService } from './footballService';
-import { mapApiFootballPlayersToSquad } from './transform/footballTransform';
 
 export async function fetchMatches(
   league?: number,

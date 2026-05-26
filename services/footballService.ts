@@ -1,11 +1,10 @@
-import { privateAxios } from '@/lib/api';
 import { API_ENDPOINTS } from '@/constants/api';
+import { apiClient } from './apiClient';
 import {
   mapApiFootballFixturesToMatches,
   mapApiFootballPlayersToSquad,
 } from './transform/footballTransform';
 import type { Match, Squad } from '@/types';
-import { ApiFootballSquadsResponse, PlayerResponse } from './transform/types/players-responseve';
 
 interface FixtureParams {
   league?: number;
@@ -16,7 +15,7 @@ interface FixtureParams {
 export const footballService = {
   getFixtures: async (params: FixtureParams = {}): Promise<Match[]> => {
     try {
-      const response = await privateAxios.get(API_ENDPOINTS.FOOTBALL.FIXTURES, {
+      const response = await apiClient.get(API_ENDPOINTS.FOOTBALL.FIXTURES, {
         params,
       });
 
@@ -30,7 +29,7 @@ export const footballService = {
   },
 
   getStandings: async (league: number, season?: number): Promise<any> => {
-    const response = await privateAxios.get(API_ENDPOINTS.FOOTBALL.STANDINGS, {
+    const response = await apiClient.get(API_ENDPOINTS.FOOTBALL.STANDINGS, {
       params: {
         league,
         season,
@@ -40,7 +39,7 @@ export const footballService = {
   },
 
   getTeams: async (league: number, season?: number): Promise<any> => {
-    const response = await privateAxios.get(API_ENDPOINTS.FOOTBALL.TEAMS, {
+    const response = await apiClient.get(API_ENDPOINTS.FOOTBALL.TEAMS, {
       params: {
         league,
         season,
@@ -50,7 +49,7 @@ export const footballService = {
   },
 
   getPlayers: async (team: number, season?: number): Promise<Squad[]> => {
-    const response = await privateAxios.get(API_ENDPOINTS.FOOTBALL.PLAYERS, {
+    const response = await apiClient.get(API_ENDPOINTS.FOOTBALL.PLAYERS, {
       params: {
         team,
       },
