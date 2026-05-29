@@ -1,5 +1,3 @@
-'use client';
-
 import { PlayerCard } from './shared/player-card';
 import type { Squad } from '@/types';
 

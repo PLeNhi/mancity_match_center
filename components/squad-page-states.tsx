@@ -1,5 +1,3 @@
-'use client';
-
 import { type ReactNode } from 'react';
 import { DehydratedState, HydrationBoundary } from '@tanstack/react-query';
 import { SketchyButton } from './sketchy-button';

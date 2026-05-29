@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import { InnerCard } from './card';
 import type { Player } from '@/types';

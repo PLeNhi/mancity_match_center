@@ -1,5 +1,3 @@
-'use client';
-
 import { defaultFilter } from '@/store/useSquadFilterStore';
 import { SketchyButton } from './sketchy-button';
 

@@ -1,5 +1,3 @@
-'use client';
-
 interface ProgressBarProps {
   value: number;
   max?: number;

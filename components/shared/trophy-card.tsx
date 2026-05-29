@@ -1,5 +1,3 @@
-'use client';
-
 import { InnerCard } from './card';
 import type { Achievement } from '@/types';
 
